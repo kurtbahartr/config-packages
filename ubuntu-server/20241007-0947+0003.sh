@@ -14,6 +14,4 @@
 #sudo pro attach
 
 # Tailscale
-curl -fsSL https://tailscale.com/install.sh | sh
-# Uncomment below if you want to bring Tailscale up as soon as it's installed above.
-#sudo tailscale up
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/tailscale.sh | sh
