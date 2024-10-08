@@ -6,7 +6,7 @@
 # Specs of the computer the snapshot was taken on:
 # AMD A4-9120 with Radeon R3 Graphics / Core layout: 2C2G
 # 16 GB 1067 MHz DDR4 SODIMM RAM
-# 480 GB KIOXIA EXCERIA-SSD
+# 480 GB KIOXIA EXCERIA-SSD (SATA)
 # Secure boot: Enabled
 # TPM revision: 2.0
 
