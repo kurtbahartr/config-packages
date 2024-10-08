@@ -20,6 +20,11 @@ sudo apt update
 sudo apt -y upgrade
 sudo snap refresh
 
+# Engrampa - MATE's fork of GNOME File Roller
+# GNOME File Roller is built on libadwaita, which means you're going to have some breakages with it on Unity.
+# ubuntu-unity-desktop and nemo-fileroller depend on GNOME File Roller, so we're going to keep it.
+sudo apt -y install engrampa 7zip-standalone 7zip-rar rar
+
 # Tailscale
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/tailscale.sh | sh
 
