@@ -11,8 +11,8 @@ curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.
 # lunar: 23.04 "Lunar Lobster"
 # mantic: 23.10 "Mantic Minotaur"
 # noble: 24.04 LTS "Noble Numbat"
-# oracular: 24.10 "Oracular Oriole" - Beta as of October 9th, 2024.
-#                                   - Expected stable release in October 10th, 2024.
+# oracular: 24.10 "Oracular Oriole"
+# p?: 25.04 "P. P." - TBA&TBD
 sudo sed -i '/ubuntu/ s/kinetic\|lunar\|mantic\|noble\|oracular/jammy/' /etc/apt/sources.list.d/ookla_speedtest-cli.list
 sudo apt update
 sudo apt install speedtest
