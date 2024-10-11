@@ -41,7 +41,7 @@ sudo wget -O /usr/bin/neowofetch https://github.com/hykilpikonna/hyfetch/raw/mas
 sudo apt -y install engrampa 7zip-standalone 7zip-rar rar
 
 # Linux Wifi Hotspot
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-apt.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | sh
 
 # Htop
 sudo apt -y install htop
@@ -53,10 +53,10 @@ sudo apt -y install python3 python-is-python3 python3-venv python3-pip
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/tailscale.sh | sh
 
 # Spotify - APT method
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/spotify-apt.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/spotify-deb.sh | sh
 
 # Discord - APT method
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/discord-apt-repo.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/discord-deb.sh | sh
 
 # WhatSie - WhatsApp Web client based on Qt WebEngine with a wide array of features - Snap method
 sudo snap install whatsie
@@ -65,10 +65,10 @@ sudo snap install whatsie
 sudo snap install thunderbird
 
 # Google Chrome - APT method
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/google-chrome-stable-apt.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/google-chrome-stable-deb.sh | sh
 
 # Windscribe - APT method
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/windscribe-apt.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/windscribe-deb.sh | sh
 
 # dconf Editor
 sudo apt -y install dconf-editor
