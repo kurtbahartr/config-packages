@@ -2,7 +2,7 @@
 
 # Stage No.1: Drivers
 
-# Snapshot date and time: October 8, 2024, 3:38 PM, UTC+03
+# Snapshot date and time: October 11, 2024, 12:50 AM, UTC+03
 # Snapshot taken on: Casper Excalibur G770.1245
 
 # Specs of the computer the snapshot was taken on:
