@@ -1,0 +1,66 @@
+# Extension list
+
+[x] Alphabetical App Grid
+[x] App menu is back
+[x] Custom Reboot
+[x] GSConnect
+[x] Lock Keys
+[ ] Sleep Through Notifications
+[x] Tailscale Status
+[x] User Themes
+
+# Extension settings
+
+> If a bullet point has a checkbox next to it, it indicates the said option's status rather than what needs to be changed.
+
+## Custom Reboot
+
+- Change bootloader to Grub
+- `sudo chmod 644 /boot/grub/grub.cfg`
+
+## GSConnect
+
+- Pair your mobile device using KDE Connect or Zorin Connect.
+[x] "Clipboard Sync" - Bidirectional.
+[x] "Share Statistics" for "System Battery".
+[x] "Pause Media" for "Incoming Calls".
+[ ] "SFTP" Plugin if using Android 8 or higher - Also disable "File System Expose" on the mobile device if that's done.
+
+## Lock Keys
+
+- Set "Indicator Style" to "Notifications Only".
+
+## Desktop Icons NG (DING)
+
+### To be configured in system Settings
+
+#### Settings > Ubuntu Desktop > Desktop Icons
+
+- Position of New Icons: Top Left
+[ ] Show Home Folder
+
+## Ubuntu Dock
+
+### To be configured in system Settings
+
+#### Settings > Ubuntu Desktop > Dock
+
+[x] Auto-hide the Dock
+[ ] Panel Mode
+- Icon Size: 40
+- Position on Screen: Bottom
+
+#### Settings > Ubuntu Desktop > Dock > Configure Dock Behavior
+
+[ ] Show Volumes and Devices
+[ ] Show Trash
+
+### To be configured in extension settings
+
+#### Behavior tab
+
+- Click action: "Focus, minimize or app spread"
+  - Shift+Middle-Click action: Quit
+- Scroll action: Do nothing
+
+
