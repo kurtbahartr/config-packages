@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Stage No.2: Packages
 
