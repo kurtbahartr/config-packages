@@ -36,7 +36,7 @@ sudo apt -y install hyfetch
 sudo wget -O /usr/bin/neowofetch https://github.com/hykilpikonna/hyfetch/raw/master/neofetch
 
 # Linux Wifi Hotspot
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | bash
 
 # Htop
 sudo apt -y install htop
@@ -93,4 +93,4 @@ sudo apt -y install apt-file
 sudo apt-file update
 
 # Speedtest CLI - The official Speedtest CLI tool by Ookla
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/speedtest-deb.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/speedtest-deb.sh | bash

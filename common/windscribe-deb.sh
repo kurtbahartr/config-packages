@@ -4,5 +4,5 @@
 
 # Windscribe
 wget -O windscribe-debian-latest.deb https://windscribe.com/install/desktop/linux_deb_x64
-sudo apt -y install ./windscribe-debian-latest.deb
+sudo apt -y install desktop-file-utils ./windscribe-debian-latest.deb
 rm windscribe-debian-latest.deb

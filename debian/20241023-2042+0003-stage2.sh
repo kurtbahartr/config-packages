@@ -2,7 +2,7 @@
 
 # Stage No.2: Packages
 
-# Snapshot date and time: October 19, 2024, 5:19 PM, UTC+03
+# Snapshot date and time: October 23, 2024, 8:42 PM, UTC+03
 # Snapshot taken on: Casper Excalibur G770.1245
 
 # Specs of the computer the snapshot was taken on:
@@ -29,20 +29,21 @@ sudo apt -y install curl
 # Rename - The CLI tool to rename files the *perl* way
 sudo apt -y install rename
 
-# HyFetch! - Because why not!!!
-sudo apt -y install hyfetch
+# Python
+sudo apt -y install python3 python-is-python3 python3-venv python3-pip
 
-# Fixup for HyFetch - There has never been a single release since the bug with Ubuntu version was resolved.
-sudo wget -O /usr/bin/neowofetch https://github.com/hykilpikonna/hyfetch/raw/master/neofetch
+# HyFetch! - Because why not!!!
+# Debian Trixie and higher has this but the latest stable release is still Bookworm,
+# which means we have to do it the Python way if APT installation fails.
+sudo apt -y install hyfetch || \
+    sudo apt -y install python3-pip python3-setuptools python3-typing-extensions && \
+    sudo pip install --break-system-packages hyfetch
 
 # Linux Wifi Hotspot
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | bash
 
 # Htop
 sudo apt -y install htop
-
-# Python
-sudo apt -y install python3 python-is-python3 python3-venv python3-pip
 
 # Tailscale
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/tailscale.sh | sh
@@ -53,8 +54,8 @@ curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/spot
 # Discord - APT method
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/discord-deb.sh | sh
 
-# Mozilla Thunderbird - Snap method
-sudo snap install thunderbird
+# Mozilla Thunderbird - APT method
+sudo apt -y install thunderbird
 
 # Google Chrome - APT method
 curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/google-chrome-stable-deb.sh | sh
@@ -65,16 +66,11 @@ curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wind
 # dconf Editor
 sudo apt -y install dconf-editor
 
-# Telegram - Snap method
-sudo snap install telegram-desktop
+# Telegram - APT method
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/telegram-ppa-deb.sh | bash
 
 # Git CLI and GitHub CLI - APT method
 sudo apt -y install git gh
-
-# Snap Store - Legacy release based on GNOME 41
-# The latest release seemingly uses the same design language as subiquity.
-# If you don't like the new "App Center", this replacement is for you.
-#sudo snap install snap-store --channel=1/stable
 
 # Font Manager - Doesn't play well with the new Nautilus graphically, works better on CLI
 sudo apt -y install font-manager
@@ -104,8 +100,14 @@ sudo apt -y install gimp
 # GNOME Tweaks
 sudo apt -y install gnome-tweaks
 
-# Wine - APT method, from Ubuntu repos
-sudo apt -y install wine {lib{nss,pam}-,}winbind
+# Wine - APT method, from official Wine repos
+# TODO: Commonize this. I'm too lazy to do it right now.
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/trixie/winehq-trixie.sources
+sudo apt update
+sudo apt -y install --install-recommends winehq-stable {lib{nss,pam}-,}winbind
 
 # Nautilus add-on for "Send To..." targets
 sudo apt -y install nautilus-sendto
@@ -113,5 +115,7 @@ sudo apt -y install nautilus-sendto
 # Timeshift - Much like macOS's "Timeshift" except it uses shadow copies instead of filesystem-level snapshots.
 sudo apt -y install timeshift
 
-# VirtualBox - APT method, from Ubuntu repos
-sudo apt -y install virtualbox{,-{guest-additions-iso,ext-pack}}
+# VirtualBox - APT method, from official VirtualBox package
+# TODO: Commonize and unattend this. I'm too lazy to do it right now.
+wget https://download.virtualbox.org/virtualbox/7.1.4/virtualbox-7.1_7.1.4-165100~Debian~bookworm_amd64.deb
+sudo apt -y install ./virtualbox-*Debian*_amd64.deb

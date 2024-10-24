@@ -41,7 +41,7 @@ sudo wget -O /usr/bin/neowofetch https://github.com/hykilpikonna/hyfetch/raw/mas
 sudo apt -y install engrampa 7zip-standalone 7zip-rar rar
 
 # Linux Wifi Hotspot
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | sh
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/common/wihotspot-ppa-deb.sh | bash
 
 # Htop
 sudo apt -y install htop
