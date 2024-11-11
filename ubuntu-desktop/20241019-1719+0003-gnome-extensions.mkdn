@@ -1,13 +1,13 @@
 # Extension list
 
-[x] Alphabetical App Grid
-[x] App menu is back
-[x] Custom Reboot
-[x] GSConnect
-[x] Lock Keys
-[ ] Sleep Through Notifications
-[x] Tailscale Status
-[x] User Themes
+- [x] Alphabetical App Grid
+- [x] App menu is back
+- [x] Custom Reboot
+- [x] GSConnect
+- [x] Lock Keys
+- [ ] Sleep Through Notifications
+- [x] Tailscale Status
+- [x] User Themes
 
 # Extension settings
 
@@ -21,10 +21,10 @@
 ## GSConnect
 
 - Pair your mobile device using KDE Connect or Zorin Connect.
-[x] "Clipboard Sync" - Bidirectional.
-[x] "Share Statistics" for "System Battery".
-[x] "Pause Media" for "Incoming Calls".
-[ ] "SFTP" Plugin if using Android 8 or higher - Also disable "File System Expose" on the mobile device if that's done.
+- [x] "Clipboard Sync" - Bidirectional.
+- [x] "Share Statistics" for "System Battery".
+- [x] "Pause Media" for "Incoming Calls".
+- [ ] "SFTP" Plugin if using Android 8 or higher - Also disable "File System Expose" on the mobile device if that's done.
 
 ## Lock Keys
 
@@ -37,7 +37,7 @@
 #### Settings > Ubuntu Desktop > Desktop Icons
 
 - Position of New Icons: Top Left
-[ ] Show Home Folder
+- [ ] Show Home Folder
 
 ## Ubuntu Dock
 
@@ -45,8 +45,8 @@
 
 #### Settings > Ubuntu Desktop > Dock
 
-[x] Auto-hide the Dock
-[ ] Panel Mode
+- [x] Auto-hide the Dock
+- [ ] Panel Mode
 - Icon Size: 40
 - Position on Screen: Bottom
 
