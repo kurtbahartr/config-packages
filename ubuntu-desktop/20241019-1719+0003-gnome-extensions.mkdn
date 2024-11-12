@@ -52,8 +52,8 @@
 
 #### Settings > Ubuntu Desktop > Dock > Configure Dock Behavior
 
-[ ] Show Volumes and Devices
-[ ] Show Trash
+- [ ] Show Volumes and Devices
+- [ ] Show Trash
 
 ### To be configured in extension settings
 
