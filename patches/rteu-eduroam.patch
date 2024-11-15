@@ -1,0 +1,87 @@
+diff --git a/rteu-eduroam.py b/rteu-eduroam.py
+index 9510a0a..909e7c7 100644
+--- a/rteu-eduroam.py
++++ b/rteu-eduroam.py
+@@ -861,7 +861,6 @@ class WpaConf:
+         eap=""" + Config.eap_outer + """
+         ca_cert=\"""" + get_config_path() + """/cat_installer/ca.pem\"""""""
+         identity=\"""" + user_data.username + """\"""""""
+-        altsubject_match=\"""" + ";".join(Config.servers) + """\"
+         """
+ 
+         if Config.eap_outer in ('PEAP', 'TTLS'):
+@@ -924,7 +923,7 @@ class IwdConfiguration:
+         [Settings]
+         AutoConnect=true
+         """.format(anonymous_identity=Config.anonymous_identity,
+-                   ca_cert=Config.CA, servers=Config.servers,
++                   ca_cert=Config.CA,
+                    username=user_data.username,
+                    realm=Config.user_realm,
+                    password=user_data.password)
+@@ -944,7 +943,7 @@ class IwdConfiguration:
+         [Settings]
+         AutoConnect=true
+         """.format(anonymous_identity=Config.anonymous_identity,
+-                   ca_cert=Config.CA, servers=Config.servers,
++                   ca_cert=Config.CA,
+                    username=user_data.username,
+                    realm=Config.user_realm,
+                    password=user_data.password)
+@@ -1071,20 +1070,12 @@ class CatNMConfigTool:
+ 
+     def __add_connection(self, ssid: str) -> None:
+         debug("Adding connection: " + ssid)
+-        server_alt_subject_name_list = dbus.Array(Config.servers)
+-        server_name = Config.server_match
+-        if self.nm_version in ("0.9", "1.0"):
+-            match_key = 'altsubject-matches'
+-            match_value = server_alt_subject_name_list
+-        else:
+-            match_key = 'subject-match'
+-            match_value = server_name
+         s_8021x_data = {
+             'eap': [Config.eap_outer.lower()],
+             'identity': self.user_data.username,
+             'ca-cert': dbus.ByteArray(
+-                "file://{0}\0".format(self.cacert_file).encode('utf8')),
+-            match_key: match_value}
++                "file://{0}\0".format(self.cacert_file).encode('utf8'))
++            }
+         if Config.eap_outer in ('PEAP', 'TTLS'):
+             s_8021x_data['password'] = self.user_data.password
+             s_8021x_data['phase2-auth'] = Config.eap_inner.lower()
+@@ -1105,15 +1096,11 @@ class CatNMConfigTool:
+             'id': ssid
+         })
+         s_wifi = dbus.Dictionary({
++            'mode': 'infrastructure',
+             'ssid': dbus.ByteArray(ssid.encode('utf8')),
+             'security': '802-11-wireless-security'
+         })
+-        s_wsec = dbus.Dictionary({
+-            'key-mgmt': 'wpa-eap',
+-            'proto': ['rsn'],
+-            'pairwise': ['ccmp'],
+-            'group': ['ccmp', 'tkip']
+-        })
++        s_wsec = dbus.Dictionary({'key-mgmt': 'wpa-eap'})
+         s_8021x = dbus.Dictionary(s_8021x_data)
+         s_ip4 = dbus.Dictionary({'method': 'auto'})
+         s_ip6 = dbus.Dictionary({'method': 'auto'})
+@@ -1182,7 +1169,6 @@ Config.profilename = "eduroam"
+ Config.url = "http://bidb.idari.erdogan.edu.tr/tr"
+ Config.email = "bidb@erdogan.edu.tr"
+ Config.title = "eduroam CAT"
+-Config.server_match = ""
+ Config.eap_outer = "TTLS"
+ Config.eap_inner = "PAP"
+ Config.init_info = "This installer has been prepared for {0}\n\nMore " \
+@@ -1193,7 +1179,6 @@ Config.init_confirmation = "This installer will only work properly if " \
+ Config.user_realm = "erdogan.edu.tr"
+ Config.ssids = ['eduroam']
+ Config.del_ssids = []
+-Config.servers = ['DNS:Recep Tayyip Erdogan University', 'DNS:anonymous@erdogan.edu.tr']
+ Config.use_other_tls_id = False
+ Config.anonymous_identity = "anonymous@erdogan.edu.tr"
+ Config.tou = ""

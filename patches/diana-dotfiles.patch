@@ -1,0 +1,80 @@
+diff --git a/group_vars/all.yml b/group_vars/all.yml
+index 8a9075f..6b51784 100644
+--- a/group_vars/all.yml
++++ b/group_vars/all.yml
+@@ -36,7 +36,7 @@ system:
+     # See #52 for a deeper lore into this.
+     #
+     # true or false
+-    xdg_autostart: false
++    xdg_autostart: true
+ 
+     plugins:
+       # Rebuilds Hyprland using a known-to-work patch if hyprpm fails
+@@ -52,7 +52,7 @@ system:
+       #
+       # true or false
+       rebuild_hypr_on_failure:
+-        enabled: false
++        enabled: true
+ 
+         # URL to get PKGBUILD from
+         pkgbuild_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/hyprland/-/raw/2cd8a96a90616647a82ea11127b131aef6ce6e6c/PKGBUILD"
+@@ -67,7 +67,7 @@ system:
+       # See #53 for more info.
+       #
+       # true or false
+-      enabled: false
++      enabled: true
+ 
+       # List of URLs to install Hyprland plugins from
+       # These URLs will each be passed to "hyprpm add" directly and
+@@ -94,10 +94,10 @@ i18n:
+ 
+   # IMEs for fcitx5
+   imes:
+-    - zh # Chinese - Pinyin
++    # zh # Chinese - Pinyin
+     - ja # Japanese - Mozc
+-    - ko # Korean - Hangul
+-    - tok # toki pona - ilo sitelen
++    # ko # Korean - Hangul
++    # tok # toki pona - ilo sitelen
+ 
+ gpu:
+   # Nvidia users, buckle up!
+@@ -107,7 +107,7 @@ gpu:
+   # Failure to do so will KILL your dGPU ALTOGETHER UNTIL YOU FIX IT OR PERFORM A REINSTALL!
+   # This flag is for NVIDIA and AMD but, not for intel as it dose not have proprietary drivers
+   # true or false
+-  proprietary_drivers: false
++  proprietary_drivers: true
+   
+ 
+ icons:
+@@ -142,7 +142,7 @@ default_roles:
+   - i18n # Internationlization. Ex. fcitx5, supplementary fonts
+   - custom_apps
+   # - kvm # Virtal Machine setup
+-  # - vmware # VMware Workstation - Type 2 hypervisor alternative to KVM
++  - vmware # VMware Workstation - Type 2 hypervisor alternative to KVM
+   - gaming
+ 
+ post_tasks:
+@@ -169,6 +169,16 @@ user_packages:
+     - android-tools
+     - spotube-bin
+     - vesktop-bin
++    - progress
++    - tk
++    - google-chrome
++    - r-quick-share
++    - telegram-desktop
++    - valent-git
++    - windscribe-v2-bin
++    - linux-wifi-hotspot
++    - htop
++    - gtk3-demos
+ 
+ # Games
+ # Needs pacman.enable_multilib to be set to true
