@@ -63,7 +63,7 @@ if [ ! -z "~/.slc-pending-sudoer" ]; then
 fi
 
 # Diana's dotfiles - The fastest and easiest way to get going!
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/libdiana-dotfiles.sh | bash
+curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/lib/diana-dotfiles.sh | bash
 
 # Dorm CA certificate
 curl -fsSL https://github.com/kurtbahartr/config-rootfs/raw/master/helper-scripts/install-dorm-ca-new.sh | bash
