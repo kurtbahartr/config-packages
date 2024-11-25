@@ -10,7 +10,7 @@
 cd ~
 
 # Install curl just in case as well
-sudo pacman -Sy curl
+sudo pacman -Sy --noconfirm curl
 
 # Prepare for rolling release of Diana's dotfiles
 bash <(curl -s https://raw.githubusercontent.com/dianaw353/dotfiles/main/dotfiles.sh) rolling
