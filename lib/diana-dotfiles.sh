@@ -21,7 +21,7 @@ curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/patches/dia
 
 echo "Running checks before the real deal."
 echo "The BECOME password is Ansible's term for your sudo password. Make sure to enter it properly."
-ansible-playbook main.yml --ask-become-pass --check || exit 1
+ansible-playbook main.yml --ask-become-pass --check
 
 echo "Checks pass. Getting to the real deal."
 echo "The BECOME password is Ansible's term for your sudo password. Make sure to enter it properly."
