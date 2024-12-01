@@ -7,4 +7,4 @@
 # Usage: /path/to/rteu-eduroam.sh
 
 curl -fsSL "https://cat.eduroam.org/user/API.php?action=downloadInstaller&lang=en&profile=6372&device=linux&generatedfor=user&openroaming=0" > rteu-eduroam.py
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/patches/rteu-eduroam.patch | patch -p1
+patch -p1 <(https://github.com/kurtbahartr/config-packages/raw/master/patches/rteu-eduroam.patch)

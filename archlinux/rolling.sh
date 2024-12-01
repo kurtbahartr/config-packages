@@ -1,14 +1,18 @@
 #!/bin/sh
 
-# Snapshot date and time: November 15, 2024, 1:00 PM, UTC+03
+# Snapshot date and time: December 1, 2024, 11:33 AM, UTC+03
 # Snapshot taken on: Casper Excalibur G770.1245
 
 # Specs of the computer the snapshot was taken on:
 # Intel Core i5-12450H with Intel UHD Graphics / Core layout: 8C12T
 # 32 GB 3200 MHz DDR4 SODIMM RAM
 # 2 TB Crucial P3 (NVMe) + 500 GB KIOXIA EXCERIA-SSD (NVMe)
-# Secure boot: Disabled
+# Secure boot: Enabled
 # TPM revision: 2.0
+
+# See the following link for more info about how to set up secure boot
+# with shim-signed:
+#   https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#shim
 
 # Root safeguard. AUR packages explicitly require non-root accounts.
 groups | grep "root" > /dev/null
@@ -63,10 +67,10 @@ if [ ! -z "~/.slc-pending-sudoer" ]; then
 fi
 
 # Diana's dotfiles - The fastest and easiest way to get going!
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/lib/diana-dotfiles.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/diana-dotfiles.sh)
 
 # Dorm CA certificate
-curl -fsSL https://github.com/kurtbahartr/config-rootfs/raw/master/helper-scripts/install-dorm-ca-new.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-rootfs/master/helper-scripts/install-dorm-ca-new.sh)
 
 # eduroam in RTEU
-curl -fsSL https://github.com/kurtbahartr/config-packages/raw/master/lib/rteu-eduroam.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/rteu-eduroam.sh)
