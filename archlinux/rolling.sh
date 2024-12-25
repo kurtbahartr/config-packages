@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Snapshot date and time: December 1, 2024, 11:33 AM, UTC+03
 # Snapshot taken on: Casper Excalibur G770.1245
@@ -14,9 +14,12 @@
 # with shim-signed:
 #   https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#shim
 
+# Usage: /path/to/rolling.sh [novideo|nvidia]
+# The supplementary parameter is passed to diana-dotfiles.sh as is. See there for more info.
+
 # Root safeguard. AUR packages explicitly require non-root accounts.
 groups | grep "root" > /dev/null
-if [ "$?" == "0" ]; then
+if groups | grep -q "root"; then
     echo "You're running as root. Running as root is dangerous and might break your system."
     echo "Furthermore, AUR packages explicitly require non-root but sudo users to build and install."
     echo "Create a user account, then try again."
@@ -24,9 +27,9 @@ if [ "$?" == "0" ]; then
 fi
 
 # Sudoer detection
-if [[ `sudo --list 2>&1 | grep "(ALL : ALL) ALL"` == "" ]]; then
+if [[ $(sudo --list 2>&1 | grep "(ALL : ALL) ALL") == "" ]]; then
     # Detect if our pending sudoer file exists.
-    if [ ! -z "~/.slc-pending-sudoer" ]; then
+    if [ -f "$HOME"/.slc-pending-sudoer ]; then
         echo "You were added as a sudoer but the change wasn't reflected."
         echo "Please reboot or use the following command, then come back:"
         echo "newgrp $USER"
@@ -62,15 +65,9 @@ if [[ `sudo --list 2>&1 | grep "(ALL : ALL) ALL"` == "" ]]; then
 fi
 
 # We're going just fine, so let's remove the pending sudoer file if it exists.
-if [ ! -z "~/.slc-pending-sudoer" ]; then
+if [ -f "$HOME/.slc-pending-sudoer" ]; then
     rm ~/.slc-pending-sudoer
 fi
 
 # Diana's dotfiles - The fastest and easiest way to get going!
-bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/diana-dotfiles.sh)
-
-# Dorm CA certificate
-bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-rootfs/master/helper-scripts/install-dorm-ca-new.sh)
-
-# eduroam in RTEU
-bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/rteu-eduroam.sh)
+bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/diana-dotfiles.sh) "$1"
