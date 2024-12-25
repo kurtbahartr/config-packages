@@ -1,5 +1,5 @@
 diff --git a/group_vars/all.yml b/group_vars/all.yml
-index e0199c9..66827b3 100644
+index e0199c9..2a2c297 100644
 --- a/group_vars/all.yml
 +++ b/group_vars/all.yml
 @@ -50,7 +50,7 @@ system:
@@ -49,7 +49,28 @@ index e0199c9..66827b3 100644
  
  gpu:
    # Nvidia users, buckle up!
-@@ -217,6 +216,36 @@ user_packages:
+@@ -151,7 +150,7 @@ gpu:
+   # Failure to do so will KILL your dGPU ALTOGETHER UNTIL YOU FIX IT OR PERFORM A REINSTALL!
+   # This flag is for NVIDIA and AMD but, not for intel as it dose not have proprietary drivers
+   # true or false
+-  proprietary_drivers: false
++  proprietary_drivers: true
+   
+ 
+ icons:
+@@ -186,9 +185,9 @@ default_roles:
+   - core_apps
+   - i18n # Internationlization. Ex. fcitx5, supplementary fonts
+   - custom_apps
+-  # - flatpak
++  - flatpak
+   # - kvm # Virtal Machine setup
+-  # - vmware # VMware Workstation - Type 2 hypervisor alternative to KVM
++  - vmware # VMware Workstation - Type 2 hypervisor alternative to KVM
+   - gaming
+ 
+ post_tasks:
+@@ -217,6 +216,44 @@ user_packages:
      - android-tools
      - spotube-bin
      - vesktop-bin
@@ -61,6 +82,10 @@ index e0199c9..66827b3 100644
 +    - linux-wifi-hotspot
 +    - htop
 +    - gtk3-demos
++    - waydroid
++    - python-pyclip
++    - waydroid-script
++    - waydroid-launcher-git
 +    - valent-git
 +    - gnome-disk-utility
 +    - gnome-font-viewer
@@ -81,7 +106,11 @@ index e0199c9..66827b3 100644
 +    - mokutil
 +    - android-sdk-platform-tools
 +    - android-sdk-cmdline-tools-latest
++    - android-sdk-build-tools
++    - android-platform-34
++    - gradle
 +    - scrcpy
++    - android-studio
 +    - rhythmbox
  
  # Games
