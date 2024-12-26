@@ -1,0 +1,10 @@
+diff --git a/release-upgrades b/release-upgrades
+index fd6dece..5e740de 100644
+--- a/release-upgrades
++++ b/release-upgrades
+@@ -13,4 +13,4 @@
+ #           the currently-running one.  Note that if this option is used and
+ #           the currently-running release is not itself an LTS release the
+ #           upgrader will assume prompt was meant to be normal.
+-Prompt=lts
++Prompt=normal
