@@ -6,4 +6,4 @@
 curl --remote-name -sL https://palfrey.github.io/discord-apt/discord-repo_1.0_all.deb
 sudo apt install -y ./discord-repo_1.0_all.deb
 sudo apt update
-sudo apt -y install discord
+sudo apt -y install discord-canary
