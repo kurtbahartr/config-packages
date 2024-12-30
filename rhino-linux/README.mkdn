@@ -1,0 +1,15 @@
+# Rhino Linux Configuration
+
+- The installation wasn't done with the original ISO but based on the latest daily build of Ubuntu.
+
+## Steps to take after installing a fresh version of Ubuntu
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/rhino-linux/os/main/ub2r.sh)
+```
+
+Follow the steps and choose **UBXI variant** to keep the stock GNOME shell.
+
+## Roadmap
+
+I'm planning to make a UBXI variant of this in the form of an ISO with some of the GNOME extensions preinstalled alongside the stock Ubuntu ones.

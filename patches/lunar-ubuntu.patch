@@ -1,0 +1,135 @@
+diff --git a/ubuntu.sh b/ubuntu.sh
+index 66125ee..a174373 100644
+--- a/ubuntu.sh
++++ b/ubuntu.sh
+@@ -74,23 +74,23 @@ echo "export STARSHIP_CONFIG=/etc/starship.toml" | sudo tee /etc/profile.d/pinkc
+ echo 'eval "$(/usr/local/bin/starship init bash)"' | sudo tee -a /etc/bash.bashrc > /dev/null
+ echo 'eval "$(/usr/local/bin/starship init zsh)"' | sudo tee -a /etc/zsh/zshrc > /dev/null
+ echo "[+] Starship configurations applied"
+-echo "[/] Applying Lunar Firewall configurations.."
+-current_ip=$(echo "$SSH_CLIENT" | cut -d' ' -f 1)
+-ufw allow in from "${current_ip}" comment 'Allow current IP' &> /dev/null
+-curl -s https://www.cloudflare.com/ips-v4 -o /tmp/cf_ips
+-echo "" >> /tmp/cf_ips 
+-curl -s https://www.cloudflare.com/ips-v6 >> /tmp/cf_ips 
++#echo "[/] Applying Lunar Firewall configurations.."
++#current_ip=$(echo "$SSH_CLIENT" | cut -d' ' -f 1)
++#ufw allow in from "${current_ip}" comment 'Allow current IP' &> /dev/null
++#curl -s https://www.cloudflare.com/ips-v4 -o /tmp/cf_ips
++#echo "" >> /tmp/cf_ips 
++#curl -s https://www.cloudflare.com/ips-v6 >> /tmp/cf_ips 
+ # Allow all traffic from Cloudflare IPs (no ports restriction)
+-for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip comment 'Cloudflare IP'; done &> /dev/null
+-ufw allow in on pterodactyl0 to 172.18.0.1 port 40001:40010 proto tcp &> /dev/null
+-ufw allow in on pterodactyl0 to 172.18.0.1 port 25566:25580 proto tcp &> /dev/null
+-ufw allow in on pterodactyl0 to 172.18.0.1 port 6379 proto tcp &> /dev/null
+-ufw allow in on pterodactyl0 to 172.18.0.1 port 27017 proto tcp &> /dev/null
+-ufw allow in on pterodactyl0 to 172.18.0.1 port 3306 proto tcp &> /dev/null
+-ufw default deny incoming &> /dev/null
+-ufw reload > /dev/null
+-ufw --force enable &> /dev/null
+-echo "[+] Lunar Firewall configurations applied"
++#for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip comment 'Cloudflare IP'; done &> /dev/null
++#ufw allow in on pterodactyl0 to 172.18.0.1 port 40001:40010 proto tcp &> /dev/null
++#ufw allow in on pterodactyl0 to 172.18.0.1 port 25566:25580 proto tcp &> /dev/null
++#ufw allow in on pterodactyl0 to 172.18.0.1 port 6379 proto tcp &> /dev/null
++#ufw allow in on pterodactyl0 to 172.18.0.1 port 27017 proto tcp &> /dev/null
++#ufw allow in on pterodactyl0 to 172.18.0.1 port 3306 proto tcp &> /dev/null
++#ufw default deny incoming &> /dev/null
++#ufw reload > /dev/null
++#ufw --force enable &> /dev/null
++#echo "[+] Lunar Firewall configurations applied"
+ echo "[/] Applying LunarShell-specific configurations.."
+ sudo chmod +x /etc/profile.d/sshmotd.sh
+ sudo chmod +x /etc/profile.d/pinkcloud-var.sh
+@@ -99,50 +99,50 @@ sudo chmod +x /etc/bash.bashrc
+ sudo chmod +x /etc/zsh/zshrc
+ sudo chmod +x /etc/starship.toml
+ sudo chmod +x /usr/local/bin/starship
+-echo "[/] Configuring Users SSH.."
+-mkdir -p ~/.ssh
+-touch ~/.ssh/authorized_keys
+-echo "[^] Please enter your SSH key:"
+-read -r ssh_key
+-echo "[+] Adding SSH key to authorized_keys"
+-echo "$ssh_key" >> ~/.ssh/authorized_keys
+-echo "[+] Added SSH key to authorized_keys"
+-echo "[+] Configured Users SSH"
+-echo "[/] Restarting SSHD.."
+-systemctl restart sshd
+-echo "[✓] Configured SSH (please test in a NEW ssh session to verify)"
+-echo  "WARNING: If you are using a cloud provider, please make sure to add a firewall rule to allow SSH connections from your IP address."
+-echo "This may break stuff if you don't know what you're doing. Please be careful."
++#echo "[/] Configuring Users SSH.."
++#mkdir -p ~/.ssh
++#touch ~/.ssh/authorized_keys
++#echo "[^] Please enter your SSH key:"
++#read -r ssh_key
++#echo "[+] Adding SSH key to authorized_keys"
++#echo "$ssh_key" >> ~/.ssh/authorized_keys
++#echo "[+] Added SSH key to authorized_keys"
++#echo "[+] Configured Users SSH"
++#echo "[/] Restarting SSHD.."
++#systemctl restart sshd
++#echo "[✓] Configured SSH (please test in a NEW ssh session to verify)"
++#echo  "WARNING: If you are using a cloud provider, please make sure to add a firewall rule to allow SSH connections from your IP address."
++#echo "This may break stuff if you don't know what you're doing. Please be careful."
+ echo "[/] Configuring Kernel"
+ cp ./sysctl.conf /etc
+ sysctl -p
+ echo "[+] Configured Kernel!"
+-echo "[/] Configuring SSH Server.."
+-sshd_config="/etc/ssh/sshd_config"
+-echo "[-] Backing up SSHD Config.."
++#echo "[/] Configuring SSH Server.."
++#sshd_config="/etc/ssh/sshd_config"
++#echo "[-] Backing up SSHD Config.."
+ # Backup the original sshd_config file
+-sudo cp "$sshd_config" "$sshd_config.bak"
+-echo "[-] Backed up SSHD Config to $sshd_config.bak"
+-echo "[-] Configuring SSHD Config.."
+-echo "[-] Changing LogLevel to VERBOSE.."
+-sudo sed -i 's/#LogLevel INFO/LogLevel VERBOSE/' "$sshd_config"
+-echo "[-] Changed LogLevel to VERBOSE"
+-echo "[-] Changing Max Auth Tries to 2..."
+-sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 2/' "$sshd_config"
+-echo "[-] Changed Max Auth Tries to 2"
+-echo "[-] Changing Max Sessions to 2..."
+-sudo sed -i 's/#MaxSessions 10/MaxSessions 2/' "$sshd_config"
+-echo "[-] Changed Max Sessions to 2"
+-echo "[-] Revoking Agent Forwarding, TCP Forwarding, TCP Keep Alive, Compression, Client Alive Count Max, and Password Authentication"
+-sudo sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding no/' "$sshd_config"
+-sudo sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding no/' "$sshd_config"
+-sudo sed -i 's/#TCPKeepAlive yes/TCPKeepAlive no/' "$sshd_config"
+-sudo sed -i 's/#Compression delayed/Compression delayed/' "$sshd_config"
+-sudo sed -i 's/#ClientAliveCountMax 3/ClientAliveCountMax 2/' "$sshd_config"
+-sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' "$sshd_config"
+-echo "[-] Revoked Agent Forwarding, TCP Forwarding, TCP Keep Alive, Compression, Client Alive Count Max, and Password Authentication"
+-echo "[/] Restarting SSHD.."
++#sudo cp "$sshd_config" "$sshd_config.bak"
++#echo "[-] Backed up SSHD Config to $sshd_config.bak"
++#echo "[-] Configuring SSHD Config.."
++#echo "[-] Changing LogLevel to VERBOSE.."
++#sudo sed -i 's/#LogLevel INFO/LogLevel VERBOSE/' "$sshd_config"
++#echo "[-] Changed LogLevel to VERBOSE"
++#echo "[-] Changing Max Auth Tries to 2..."
++#sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 2/' "$sshd_config"
++#echo "[-] Changed Max Auth Tries to 2"
++#echo "[-] Changing Max Sessions to 2..."
++#sudo sed -i 's/#MaxSessions 10/MaxSessions 2/' "$sshd_config"
++#echo "[-] Changed Max Sessions to 2"
++#echo "[-] Revoking Agent Forwarding, TCP Forwarding, TCP Keep Alive, Compression, Client Alive Count Max, and Password Authentication"
++#sudo sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding no/' "$sshd_config"
++#sudo sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding no/' "$sshd_config"
++#sudo sed -i 's/#TCPKeepAlive yes/TCPKeepAlive no/' "$sshd_config"
++#sudo sed -i 's/#Compression delayed/Compression delayed/' "$sshd_config"
++#sudo sed -i 's/#ClientAliveCountMax 3/ClientAliveCountMax 2/' "$sshd_config"
++#sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' "$sshd_config"
++#echo "[-] Revoked Agent Forwarding, TCP Forwarding, TCP Keep Alive, Compression, Client Alive Count Max, and Password Authentication"
++#echo "[/] Restarting SSHD.."
+ # Restart SSH service to apply changes
+-sudo systemctl restart sshd
+-echo "[✓] Secured SSH Server"
++#sudo systemctl restart sshd
++#echo "[✓] Secured SSH Server"
+ echo "[✓] LunarShell under bash and zsh was successfully installed! Please reopen your shell to access the new interface."

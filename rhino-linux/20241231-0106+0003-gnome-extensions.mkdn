@@ -1,0 +1,102 @@
+# Extension list
+
+- [x] Alphabetical App Grid
+- [x] App menu is back
+- [x] GSConnect
+- [x] Lock Keys
+- [x] Luminous Desktop
+- [x] Tailscale QS
+- [ ] Ubuntu Dock
+- [x] Window is Ready - Notification remover
+
+# Extension settings
+
+> If a bullet point has a checkbox next to it, it indicates the said option's status rather than what needs to be changed.
+
+## GSConnect
+
+- Pair your mobile device using KDE Connect or Zorin Connect.
+
+- [x] "Clipboard Sync" - Bidirectional.
+
+- [x] "Share Statistics" for "System Battery".
+
+- [x] "Pause Media" for "Incoming Calls".
+
+- Set the following directories on the mobile device for file system expose if running Android 8 or higher:
+  
+  - Internal storage > DCIM
+  
+  - Internal storage > Documents
+  
+  - Internal storage > Music
+  
+  - Internal storage > Pictures
+
+## Lock Keys
+
+- Set "Indicator Style" to "Notifications Only".
+
+## Desktop Icons NG (DING)
+
+### To be configured in system Settings
+
+#### Settings > Ubuntu Desktop > Desktop Icons
+
+- Position of New Icons: Top Left
+
+- [ ] Show Home Folder
+
+# Additional things to configure within GNOME
+
+## Settings
+
+### Displays > Night Light
+
+- Set Schedule to "Sunset to Sunrise".
+
+- Set the Color Temperature to the lowest in the slider.
+
+### Sound > Input
+
+- Set Input Volume to something around 5-10% if you don't want to literally deafen everyone in your Discord calls.
+
+### Multitasking > General
+
+- [x] Hot Corner
+
+### Keyboard > Input Sources
+
+1. English US
+
+2. Turkish
+
+3. Japanese (Mozc)
+
+### Privacy & Security > Location
+
+- [x] Automatic Device Location
+
+### System
+
+#### Region & Language
+
+- Set Language to "English (Canada)"
+
+- Set Formats to "Canada"
+
+- Open "Manage Installed Languages" to check for missing language support, install missing translations and apple these changes system-wide.
+
+#### Date & Time
+
+- [x] Automatic Time Zone
+
+- Set Time Format to "AM / PM"
+
+## World Clocks
+
+- Add the time for "Montreal, QC, Canada"
+
+## Weather
+
+- Set the location to "Montreal, QC, Canada" manually.
