@@ -6,5 +6,4 @@
 # unfortunately.
 
 # Lunar-ZSHRC
-cd /
-sudo patch -p1 < <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/lunar-zshrc.patch)
+sudo curl -o /etc/zsh/zshrc -L https://raw.githubusercontent.com/ohemilyy/SysScripts/main/LunarShell/asset/zshrc
