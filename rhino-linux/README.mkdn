@@ -5,6 +5,7 @@
 ## Steps to take after installing a fresh version of Ubuntu
 
 ```bash
+sudo apt install -y gettext
 bash <(curl -s https://raw.githubusercontent.com/rhino-linux/os/main/ub2r.sh)
 ```
 
