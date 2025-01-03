@@ -16,17 +16,17 @@
 sudo rpk -y update
 
 # CLI text editors
-sudo nala -y install nano vim
+sudo nala install -y nano vim
 sudo snap install helix --classic
 
 # CURL - Doesn't exist on the base install for some reason
-sudo nala -y install curl
+sudo nala install -y curl
 
 # Rename - The CLI tool to rename files the *perl* way
-sudo nala -y install rename
+sudo nala install -y rename
 
 # HyFetch! - Because why not!!!
-sudo nala -y install hyfetch
+sudo nala install -y hyfetch
 
 # Fixup for HyFetch - Their version of Neofetch doesn't acknowledge Rhino Linux.
 sudo curl -o /usr/bin/neowofetch https://raw.githubusercontent.com/kurtbahartr/hyfetch/master/neofetch
@@ -35,10 +35,10 @@ sudo curl -o /usr/bin/neowofetch https://raw.githubusercontent.com/kurtbahartr/h
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/wihotspot-ppa-deb.sh)
 
 # Htop
-sudo nala -y install htop
+sudo nala install -y htop
 
 # Python
-sudo nala -y install python3 python-is-python3 python3-venv python3-pip
+sudo nala install -y python3 python-is-python3 python3-venv python3-pip
 
 # Google Chrome - APT method
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/google-chrome-stable-deb.sh)
@@ -69,13 +69,13 @@ sudo snap install thunderbird
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/windscribe-deb.sh)
 
 # dconf Editor
-sudo nala -y install dconf-editor
+sudo nala install -y dconf-editor
 
 # Telegram - Snap method
 sudo snap install telegram-desktop
 
 # Git CLI and GitHub CLI - APT method
-sudo nala -y install git gh
+sudo nala install -y git gh
 
 # Snap Store - Legacy release based on GNOME 41
 # The latest release seemingly uses the same design language as subiquity.
@@ -83,45 +83,45 @@ sudo nala -y install git gh
 #sudo snap install snap-store --channel=1/stable
 
 # Font Manager - Doesn't play well with the new Nautilus graphically, works better on CLI
-sudo nala -y install font-manager
+sudo nala install -y font-manager
 
 # ibus-mozc - Japanese input by Google for US keyboards!
-sudo nala -y install ibus-mozc fonts-noto-cjk-extra
+sudo nala install -y ibus-mozc fonts-noto-cjk-extra
 
 # chntpw - Simple Windows registry editor for Linux, mostly useful for dualboot Bluetooth shenanigans
-sudo nala -y install chntpw
+sudo nala install -y chntpw
 
 # apt-file - Really useful when trying to find a file but don't know what package it belongs to
-sudo nala -y install apt-file
+sudo nala install -y apt-file
 sudo apt-file update
 
 # Speedtest CLI - The official Speedtest CLI tool by Ookla
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/speedtest-deb.sh)
 
 # progress - Console tool to see the progress of awfully silent commands like "dd".
-sudo nala -y install progress
+sudo nala install -y progress
 
 # balena Etcher - APT method
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/balena-etcher-deb.sh)
 
 # GIMP - APT method
-sudo nala -y install gimp
+sudo nala install -y gimp
 
 # GNOME Tweaks
-sudo nala -y install gnome-tweaks
+sudo nala install -y gnome-tweaks
 
 # Wine - APT method, from Ubuntu repos
-sudo nala -y install wine {lib{nss,pam}-,}winbind
+sudo nala install -y wine {lib{nss,pam}-,}winbind
 sudo ln -sf /usr/share/doc/wine/examples/wine.desktop /usr/share/applications/
 
 # Nautilus add-on for "Send To..." targets
-sudo nala -y install nautilus-sendto
+sudo nala install -y nautilus-sendto
 
 # Timeshift - Much like macOS's "Timeshift" except it uses shadow copies instead of filesystem-level snapshots.
-sudo nala -y install timeshift
+sudo nala install -y timeshift
 
 # VirtualBox - APT method, from Ubuntu repos
-sudo nala -y install virtualbox{,-{guest-additions-iso,ext-pack}}
+sudo nala install -y virtualbox{,-{guest-additions-iso,ext-pack}}
 
 # Enroll MOK for DKMS
 echo "About to enroll MOK. Please use something simple since you'll have to use it once after reboot."

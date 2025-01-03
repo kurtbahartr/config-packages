@@ -36,5 +36,5 @@ sudo nala install -y nvidia-driver-560
 # while also removing the installed packages that have the phrase "-open" in their names for great measure.
 # If all of these return a non-empty string, which means we have the non-open-source one, then install mate-optimus.
 if [ "$(sudo apt list --installed nvidia-driver* | grep nvidia-driver | sed 's/\/.*//; /-open/d')" != "" ]; then
-    sudo nala -y install mate-optimus
+    sudo nala install -y mate-optimus
 fi
