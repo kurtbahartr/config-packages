@@ -6,7 +6,7 @@
 # Project Ascension
 
 # Step 1 - Installing dependencies
-sudo apt install -y wine winetricks mono-complete
+sudo apt install -y wine winetricks mono-complete libfuse2
 
 # Step 2 - Setting up Ascension WINE bottle
 export WINEPREFIX="$HOME/.config/projectascension/WoW"
@@ -37,7 +37,6 @@ rm -rf "$DXVK_TMPDIR"
 
 # Step 5 - Install our launcher
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/appimagelauncher-deb.sh)
-mkdir ascension-launcher
 curl -Lo ascension-launcher.appimage "https://api.ascension.gg/api/bootstrap/launcher/latest?unix"
 chmod a+x ascension-launcher.appimage
 echo "About to run Ascension Launcher. Please proceed within there to complete the setup!"
