@@ -144,3 +144,6 @@ sudo pip install woeusb-ng --break-system-packages
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/lunar-ubuntu.sh)
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/lunar-zshrc.sh)
 chsh -s /usr/bin/zsh
+
+# Gamemode - Gaming on Linux executed properly
+sudo nala install -y gamemode
