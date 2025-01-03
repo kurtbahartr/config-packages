@@ -13,9 +13,10 @@
 
 # Lunar-Ubuntu
 curl --remote-name -L https://shell.lunarlabs.cc/src/distros/ubuntu.sh
+curl --remote-name -L https://shell.lunarlabs.cc/asset/sysctl.conf
 patch -p1 < <(https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/lunar-ubuntu.patch)
 sudo cp /etc/sysctl.conf{,.bak}
-sudo bash lunar-ubuntu.sh
-rm lunar-ubuntu.sh
+sudo bash ubuntu.sh
+rm ubuntu.sh
 echo -e "\nLunar Shell also configures /etc/sysctl.conf for network security and several QoL improvements."
 echo "If you don't like the current configuration and think it's because of this config change, I created a backup for you in the same directory with a .bak extension."
