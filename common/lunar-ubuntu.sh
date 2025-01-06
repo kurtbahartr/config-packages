@@ -18,5 +18,6 @@ patch -p1 < <(https://raw.githubusercontent.com/kurtbahartr/config-packages/mast
 sudo cp /etc/sysctl.conf{,.bak}
 sudo bash ubuntu.sh
 rm ubuntu.sh
+rm sysctl.conf
 echo -e "\nLunar Shell also configures /etc/sysctl.conf for network security and several QoL improvements."
 echo "If you don't like the current configuration and think it's because of this config change, I created a backup for you in the same directory with a .bak extension."
