@@ -14,7 +14,7 @@
 cd /etc/update-manager || exit
 
 # Patch release-upgrades config
-patch -p1 <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/release-upgrades.patch)
+patch -p1 < <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/release-upgrades.patch)
 
 echo "Now your system is set to receive interim releases."
 echo "Fasten your seat belts, because this will definitely take some time."

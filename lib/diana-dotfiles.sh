@@ -21,9 +21,9 @@ cd dotfiles || exit
 
 # Patch variables using the premade patch files
 if [ "$1" == "nvidia" ]; then
-    patch -p1 <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/diana-dotfiles-nvidia.patch)
+    patch -p1 < <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/diana-dotfiles-nvidia.patch)
 else
-    patch -p1 <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/diana-dotfiles.patch)
+    patch -p1 < <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/diana-dotfiles.patch)
 fi
 
 echo "Running checks before the real deal."
