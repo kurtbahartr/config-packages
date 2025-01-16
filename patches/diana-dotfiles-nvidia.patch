@@ -1,5 +1,5 @@
 diff --git a/group_vars/all.yml b/group_vars/all.yml
-index e0199c9..2a2c297 100644
+index e0199c9..e21c5ac 100644
 --- a/group_vars/all.yml
 +++ b/group_vars/all.yml
 @@ -50,7 +50,7 @@ system:
@@ -70,14 +70,13 @@ index e0199c9..2a2c297 100644
    - gaming
  
  post_tasks:
-@@ -217,6 +216,44 @@ user_packages:
+@@ -217,6 +216,43 @@ user_packages:
      - android-tools
      - spotube-bin
      - vesktop-bin
 +    - progress
 +    - tk
 +    - google-chrome
-+    - r-quick-share
 +    - telegram-desktop
 +    - linux-wifi-hotspot
 +    - htop
