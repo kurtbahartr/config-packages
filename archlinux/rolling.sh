@@ -71,3 +71,6 @@ fi
 
 # Diana's dotfiles - The fastest and easiest way to get going!
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/diana-dotfiles.sh) "$1"
+
+# Lunar Shell - My personal new favourite!
+bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/lib/lunar-arch.sh)

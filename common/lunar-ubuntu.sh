@@ -13,7 +13,7 @@
 
 # Lunar-Ubuntu
 curl --remote-name -L https://raw.githubusercontent.com/ohemilyy/SysScripts/main/LunarShell/src/distros/ubuntu.sh
-patch -p1 < <(https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/lunar-ubuntu.patch)
+patch -p1 < <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/patches/lunar-ubuntu.patch)
 sudo bash ubuntu.sh
 rm ubuntu.sh
 chsh -s /usr/bin/zsh
