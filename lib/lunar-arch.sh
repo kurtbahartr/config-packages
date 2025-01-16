@@ -23,6 +23,16 @@ else
     echo "[+] figlet already installed"
 fi
 
+if ! command -v hostname &> /dev/null; then
+    echo "[/] Installing inettools (for hostname command).. (Passing script to Pacman)"
+    echo "======"
+    sudo pacman -S --noconfirm inettools
+    echo "======"
+    echo "[+] inettools installed (for hostname command)"
+else
+    echo "[+] inettools already installed (for hostname command)"
+fi
+
 if ! command -v jq &> /dev/null; then
     echo "[/] Installing jq.. (Passing script to Pacman)"
     echo "======"
