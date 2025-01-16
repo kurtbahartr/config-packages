@@ -75,8 +75,8 @@ sudo curl --silent https://shell.lunarlabs.cc/asset/banner > /etc/banner
 echo "[+] Luna files downloaded and installed"
 echo "[/] Applying Starship-specific configurations.."
 echo "export STARSHIP_CONFIG=/etc/starship.toml" | sudo tee /etc/profile.d/pinkcloud-var.sh > /dev/null
-echo 'eval "$(/usr/local/bin/starship init bash)"' | sudo tee -a /etc/bash.bashrc > /dev/null
-echo 'eval "$(/usr/local/bin/starship init zsh)"' | sudo tee -a /etc/zsh/zshrc > /dev/null
+echo 'eval "$(/usr/local/starship init bash)"' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo 'eval "$(/usr/local/starship init zsh)"' | sudo tee -a /etc/zsh/zshrc > /dev/null
 echo "[+] Starship configurations applied"
 echo "[/] Applying LunarShell-specific configurations.."
 sudo chmod +x /etc/profile.d/sshmotd.sh
