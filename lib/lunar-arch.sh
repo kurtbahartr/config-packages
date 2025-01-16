@@ -85,7 +85,6 @@ sudo chmod +x /etc/banner
 sudo chmod +x /etc/bash.bashrc
 sudo chmod +x /etc/zsh/zshrc
 sudo chmod +x /etc/starship.toml
-sudo chmod +x /usr/local/bin/starship
 echo "[✓] LunarShell under bash and zsh was successfully installed! Please reopen your shell to access the new interface."
 chsh -s /usr/bin/zsh
 echo "[✓] Your shell has been changed to zsh and this change will take effect after a logout."
