@@ -13,7 +13,7 @@ curl -sL https://github.com/bol-van/zapret/archive/master.tar.gz | tar -xvz
 cd zapret-master
 echo "Just perform the installation. The config will be replaced with our own in the end."
 ./install_easy.sh
-curl -s https://raw.githubusercontent.com/kurtbahartr/config-rootfs/common/opt/zapret/config | sudo tee /opt/zapret/config
+curl -s https://raw.githubusercontent.com/kurtbahartr/config-rootfs/master/common/opt/zapret/config | sudo tee /opt/zapret/config
 sudo systemctl daemon-reload
 sudo systemctl reload zapret
 sudo systemctl restart zapret
