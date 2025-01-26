@@ -4,11 +4,8 @@
 
 # AppImageLauncher
 
-# Identify if Ubuntu or not
-[ "$(grep sid /etc/debian_version)" -eq "" ] && IS_UBUNTU=1 || IS_UBUNTU=0
-
 # Grab the appropriate DEB file
-if [ $IS_UBUNTU ]; then
+if (grep sid /etc/debian_version && grep -i ubuntu /etc/os-release) > /dev/null; then
   curl -o "appimagelauncher.deb" -sL https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 else
   curl -o "appimagelauncher.deb" -sL https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.xenial_amd64.deb
