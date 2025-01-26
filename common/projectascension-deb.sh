@@ -21,8 +21,8 @@ winetricks win10 ie8 corefonts dotnet48 vcrun2015
 
 # Step 4 - Install DXVK
 LATEST_DXVK_RELEASE_API=$(curl -sL https://api.github.com/repos/doitsujin/dxvk/releases/latest)
-LATEST_DXVK_RELEASE_DOWNLOAD=$(echo "$LATEST_DXVK_RELEASE_API" | jq -r '.assets.[].browser_download_url')
-LATEST_DXVK_RELEASE_TARBALL=$(echo "$LATEST_DXVK_RELEASE_API" | jq -r '.assets.[].name')
+LATEST_DXVK_RELEASE_DOWNLOAD=$(echo "$LATEST_DXVK_RELEASE_API" | jq -r '.assets.[0].browser_download_url')
+LATEST_DXVK_RELEASE_TARBALL=$(echo "$LATEST_DXVK_RELEASE_API" | jq -r '.assets.[0].name')
 DXVK_TMPDIR=$(mktemp -d -t 'dxvk-XXXXXX')
 cd "$DXVK_TMPDIR"
 curl --remote-name -L "$LATEST_DXVK_RELEASE_DOWNLOAD"
