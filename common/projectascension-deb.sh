@@ -29,6 +29,8 @@ curl --remote-name -L "$LATEST_DXVK_RELEASE_DOWNLOAD"
 tar -xvf "$LATEST_DXVK_RELEASE_TARBALL"
 cd $(ls -I "$LATEST_DXVK_RELEASE_TARBALL")
 cp x32/*.dll "$WINEPREFIX/drive_c/windows/system32"
+echo "Firing up winecfg. See the above DLLs? Add NATIVE overrides for them in the Libraries tab."
+echo "First type in the library's name, hit enter, then click \"Edit\" and choose \"Native (Windows)\"."
 winecfg
 
 # Intermedietary step - Remove the temporary directory
