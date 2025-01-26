@@ -141,7 +141,7 @@ sudo nala install -y obs-studio
 
 # WoeUSB-NG - Python method
 # I know you all will hate on me for using --break-system-packages, but I've found no issues about it with this specific package so far.
-sudo nala install -y git p7zip-full python3-pip python3-wxgtk4.0 grub2-common grub-pc-bin parted dosfstools ntfs-3g libgtk-3-dev
+sudo nala install -y git p7zip-full python3-pip python3-wxgtk4.0 python3-termcolor grub2-common grub-pc-bin parted dosfstools ntfs-3g libgtk-3-dev
 sudo pip install woeusb-ng --break-system-packages
 
 # Lunar Shell - One-of-a-kind shell that's my new favorite!
@@ -154,4 +154,5 @@ sudo nala install -y gamemode
 curl --remote-name -L https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb
 sudo nala install -y ./packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
+sudo nala update
 sudo nala install -y powershell
