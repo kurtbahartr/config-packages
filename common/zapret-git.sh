@@ -15,5 +15,4 @@ echo "Just perform the installation. The config will be replaced with our own in
 ./install_easy.sh
 curl -s https://raw.githubusercontent.com/kurtbahartr/config-rootfs/master/common/opt/zapret/config | sudo tee /opt/zapret/config
 sudo systemctl daemon-reload
-sudo systemctl reload zapret
 sudo systemctl restart zapret
