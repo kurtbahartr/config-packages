@@ -1,0 +1,174 @@
+# Extension list
+
+- [x] ArcMenu
+- [x] Blur my Shell
+- [x] Dash to Panel
+- [x] GSConnect
+- [x] Lock Keys
+- [x] Notification Banner Reloaded
+- [x] Sleep Through Notifications
+- [x] User Themes
+
+## System extensions
+
+- [x] Desktop Icons NG (DING)
+- [x] Ubuntu AppIndicators
+- [ ] Ubuntu Dock
+- [x] Ubuntu Tiling Assistant
+
+# Extension settings
+
+> If a bullet point has a checkbox next to it, it indicates the said option's status rather than what needs to be changed.
+
+## ArcMenu
+
+### General
+
+- [x] Display ArcMenu on all Panels
+
+- [x] Hide Overview on Startup
+
+#### ArcMenu Hotkey (Cog icon)
+
+- [x] Open on Primary Monitor
+
+### Menu
+
+- Menu Layout: Modern Menu Layouts > 11
+
+#### Menu Visual Appearance
+
+##### Menu Size
+
+- Height: 650
+
+- Width Offset: 100
+
+##### Menu Location
+
+- Override Menu Location: Bottom Centered
+
+#### 11 Layout Tweaks > Extra Shortcuts
+
+Remove all shortcuts here.
+
+#### Pinned Apps
+
+- Firefox Stable
+
+- LibreOffice
+
+- LibreOffice Writer
+
+- LibreOffice Calc
+
+- LibreOffice Impress
+
+- Thunderbird
+
+- Steam
+
+#### Power Options
+
+- [x] Suspend
+
+Also move Suspend in between Restart and Lock.
+
+### Menu Button
+
+#### Icon
+
+- Choose a New Icon: Choose whichever icon you want to see. I personally prefer GNOME's own apps icon, located as the last icon of the "Icons" tab.
+
+- Icon Size: 35
+
+#### Click Options
+
+- Left Click: ArcMenu
+
+- Right Click: Context Menu
+
+- Middle Click: None
+
+## Dash to Panel
+
+### Position
+
+- Display the main panel on: Primary monitor
+
+- Disable "Show Applications Button".
+
+- Set everything from top until "Taskbar", including such, to be "Monitor Center".
+
+### Style
+
+- App Icon Margin: 0 px
+
+- App Icon Padding: 8 px
+
+- Running indicator style (Focused app): Dashes
+
+- Running indicator style (Unfocused apps): Dots
+
+### Behavior
+
+- [ ] Show favorite applications on secondary panels
+
+- [ ] Isolate monitors
+
+- [x] Click empty space to close overview
+
+- [x] Disable show overview on startup
+
+### Action
+
+- Click action: Toggle single / Preview multiple
+
+- Scroll panel action: Do nothing
+
+- Scroll icon action: Do nothing
+
+- [x] Use hotkeys to activate apps
+
+### Fine-Tune
+
+- [ ] Animate launching new windows
+
+## GSConnect
+
+- Pair your mobile device using KDE Connect or Zorin Connect.
+
+- [x] "Clipboard Sync" - Bidirectional.
+- [x] "Share Statistics" for "System Battery".
+- [x] "Pause Media" for "Incoming Calls".
+- [ ] "SFTP" Plugin if using Android 8 or higher - Also disable "File System Expose" on the mobile device if that's done.
+
+## Lock Keys
+
+- Set "Indicator Style" to "Notifications Only".
+
+## Notification Banner Reloaded
+
+- Horizontal Position: Right
+
+- Vertical Position: Bottom
+
+- Animation Direction: Slide from Right (from bottom also works and would look more consistent on its own)
+
+- Animation Time (ms): 200
+
+## Desktop Icons NG (DING)
+
+### To be configured in system Settings
+
+#### Settings > Ubuntu Desktop > Desktop Icons
+
+- Position of New Icons: Top Left
+
+- [ ] Show Home Folder
+
+### To be configured in extension settings
+
+- [x] Show the trash icon in the desktop
+
+# 
