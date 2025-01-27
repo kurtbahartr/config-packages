@@ -24,13 +24,13 @@ else
 fi
 
 if ! command -v hostname &> /dev/null; then
-    echo "[/] Installing inettools (for hostname command).. (Passing script to Pacman)"
+    echo "[/] Installing inetutils (for hostname command).. (Passing script to Pacman)"
     echo "======"
-    sudo pacman -S --noconfirm inettools
+    sudo pacman -S --noconfirm inetutils
     echo "======"
-    echo "[+] inettools installed (for hostname command)"
+    echo "[+] inetutils installed (for hostname command)"
 else
-    echo "[+] inettools already installed (for hostname command)"
+    echo "[+] inetutils already installed (for hostname command)"
 fi
 
 if ! command -v jq &> /dev/null; then
@@ -96,8 +96,3 @@ sudo chmod +x /etc/bash.bashrc
 sudo chmod +x /etc/zsh/zshrc
 sudo chmod +x /etc/starship.toml
 echo "[✓] LunarShell under bash and zsh was successfully installed! Please reopen your shell to access the new interface."
-chsh -s /usr/bin/zsh
-echo "[✓] Your shell has been changed to zsh and this change will take effect after a logout."
-echo "    You may still access your old shell for now until you log out, but a new session will replace it with zsh."
-echo -e "    If you don't like this, you can always switch back with the following command:\n"
-echo -e "      chsh -s $SHELL\n"
