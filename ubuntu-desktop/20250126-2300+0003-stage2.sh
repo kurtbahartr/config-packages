@@ -41,7 +41,7 @@ sudo apt install -y rename
 sudo apt install -y hyfetch
 
 # FastFetch - Alternative backend for HyFetch that actually works.
-sudo apt install -y fastfetch
+sudo pacstall -IP fastfetch-bin
 
 # Linux Wifi Hotspot
 bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/master/common/wihotspot-ppa-deb.sh)
