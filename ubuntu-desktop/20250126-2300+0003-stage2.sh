@@ -77,7 +77,7 @@ bash <(curl -s https://raw.githubusercontent.com/kurtbahartr/config-packages/mas
 sudo apt install -y dconf-editor
 
 # Telegram - Pacstall method
-sudo pacstall -I -p telegram-bin
+sudo pacstall -I -P telegram-bin
 
 # Git CLI and GitHub CLI - APT method
 sudo apt install -y git gh
