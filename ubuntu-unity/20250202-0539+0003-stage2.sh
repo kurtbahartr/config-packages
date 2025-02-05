@@ -83,7 +83,7 @@ sudo pacstall -I -P telegram-bin
 sudo apt install -y git gh
 
 # Font Manager - Doesn't play well with the new Nautilus graphically, works better on CLI
-sudo apt install -y font-manager
+sudo apt install -y font-manager nemo-font-manager
 
 # ibus-mozc - Japanese input by Google for US keyboards!
 sudo apt install -y ibus-mozc fonts-noto-cjk-extra
